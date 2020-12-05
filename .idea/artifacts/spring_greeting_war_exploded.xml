@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="spring-greeting:war exploded">
+    <output-path>$PROJECT_DIR$/sample//spring-greeting/out/artifacts</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="spring-greeting" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="spring-fw-lib" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="spring-greeting/web/Web" />
+    </root>
+  </artifact>
+</component>

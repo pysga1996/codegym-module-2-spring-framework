@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="currency-converter:war exploded">
+    <output-path>$PROJECT_DIR$/practice/currency-converter/out/artifacts</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="currency-converter" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="spring-fw-lib" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="currency-converter/web/Web" />
+    </root>
+  </artifact>
+</component>
