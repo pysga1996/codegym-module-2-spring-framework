@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{customer.list}">Customer List</title>
+</head>
+<body>
+<span th:text="#{global.language}+${': '}"></span>
+<a th:href="@{/customer/list/(lang=en)}" th:text="#{global.english}">English</a> |
+<a th:href="@{/customer/list/(lang=vi)}" th:text="#{global.vietnamese}">Vietnamese</a>
+<h1><a th:href="@{/home/}" th:text="#{global.home}"></a></h1>
+<a th:href="@{/customer/create}" th:text="#{customer.add}"></a>
+<h1 th:text="#{global.customer}"></h1>
+<form>
+    <label for="word"></label><input name="word" type="text" id="word"/>
+    <input type="submit" th:value="#{global.search}"/>
+</form>
+<th:block th:if="${matchesCount}" th:with="lower_case_customer=#{global.customer}">
+    <span th:text="#{global.found}+${' '}+${matchesCount}+${' '}+${#strings.toLowerCase(lower_case_customer)}+${(#locale.language=='en')&&(matchesCount>1)?'s':''}"></span>
+<!--    -->
+</th:block>
+<br>
+<th:block th:if="${message}">
+    <p th:text="#{customer.delete_success}"></p>
+</th:block>
+<table border="1">
+    <tr>
+        <th th:text="#{customer.last_name}"></th>
+        <th th:text="#{customer.first_name}"></th>
+        <th th:text="#{global.province}"></th>
+        <th th:text="#{global.edit}"></th>
+        <th th:text="#{global.delete}"></th>
+    </tr>
+    <th:block th:each="customer : ${customers}">
+        <tr>
+            <td th:text="${customer.lastName}"></td>
+            <td th:text="${customer.firstName}"></td>
+            <td th:text="${customer.province.name}"></td>
+            <td><a th:href="@{/customer/edit/__${customer.id}__ }" th:text="#{global.edit}"></a></td>
+            <td><a th:href="@{/customer/delete/__${customer.id}__ }" th:text="#{global.delete}"></a></td>
+        </tr>
+    </th:block>
+</table>
+<div>
+    <a th:href="@{/customer/list/(page=${customers.number - 1})}" th:if="${customers.hasPrevious()}" th:text="#{global.previous}"></a>
+    <span th:text="${customers.number + 1}"></span>/<span th:text="${customers.totalPages}"></span>
+    <a th:href="@{/customer/list/(page=${customers.number + 1})}" th:if="${customers.hasNext()}" th:text="#{global.next}"></a>
+</div>
+</body>
+</html>

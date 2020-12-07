@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View category</title>
+</head>
+<body>
+<h2><a th:href="@{/home}">Home</a></h2>
+<a th:href="@{/user/category/create}">Create new category</a>
+<h1>View category: <span th:text="${category.name}"></span></h1>
+<p>
+    <a th:href="@{/user/category/list}">Category list</a>
+</p>
+<table border="1">
+    <tr>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Author</th>
+        <th>Publish Date</th>
+    </tr>
+    <th:block th:each="article : ${articles}">
+        <tr>
+            <td><a th:text="${article.title}" th:href="@{/view-article/__${article.id}__ }"></a></td>
+            <td th:text="${article.category.name}"></td>
+            <td th:text="${article.author}"></td>
+            <td th:text="${#dates.format(article.publishDate,'dd-MM-yyyy')}"></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>

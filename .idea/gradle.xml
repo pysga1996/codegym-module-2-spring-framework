@@ -7,8 +7,22 @@
         <option name="delegatedBuild" value="true" />
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/case-study/i-note" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/case-study/i-note" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/practice/blog-app" />
-        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.0.1" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
         <option name="gradleJvm" value="1.8" />
         <option name="modules">
           <set>
@@ -20,9 +34,107 @@
       <GradleProjectSettings>
         <option name="delegatedBuild" value="true" />
         <option name="testRunner" value="GRADLE" />
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/practice/blog-app-expansion" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/practice/blog-app-expansion" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/practice/blog-security" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/practice/blog-security" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/practice/cart-session" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/practice/cart-session" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/practice/i18n-customer-manager" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/practice/i18n-customer-manager" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/practice/register-form-validation" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/practice/register-form-validation" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/practice/register-form-validation-by-annotation" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/practice/register-form-validation-by-annotation" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/practice/restful-blog" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/practice/restful-blog" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/practice/thymeleaf-product-manager" />
-        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.0.1" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
         <option name="gradleJvm" value="1.8" />
         <option name="modules">
           <set>
@@ -35,8 +147,36 @@
         <option name="delegatedBuild" value="true" />
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/sample/custom-phone-validation" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/sample/custom-phone-validation" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/sample/customer-form-validation" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/sample/customer-form-validation" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/sample/form-and-data-binding" />
-        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.0.1" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
         <option name="gradleJvm" value="1.8" />
         <option name="modules">
           <set>
@@ -49,8 +189,22 @@
         <option name="delegatedBuild" value="true" />
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/sample/i18n-blog" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/sample/i18n-blog" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/sample/jpa-customer-manager" />
-        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.0.1" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
         <option name="gradleJvm" value="1.8" />
         <option name="modules">
           <set>
@@ -63,8 +217,120 @@
         <option name="delegatedBuild" value="true" />
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/sample/jpa-customer-pagination" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/sample/jpa-customer-pagination" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/sample/jpa-customer-province" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/sample/jpa-customer-province" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/sample/online-shop-session" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/sample/online-shop-session" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/sample/page-view-count" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/sample/page-view-count" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/sample/restful-customer-manager" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/sample/restful-customer-manager" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/sample/role-based-security" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/sample/role-based-security" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/sample/spring-boot-deployment" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/sample/spring-boot-deployment" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/sample/spring-security-integration" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/sample/spring-security-integration" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/sample/thymeleaf-customer-manager" />
-        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.0.1" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
         <option name="gradleJvm" value="1.8" />
         <option name="modules">
           <set>
@@ -78,7 +344,7 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/sample/timezone-gradle" />
-        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.0.1" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
         <option name="gradleJvm" value="1.8" />
         <option name="modules">
           <set>
@@ -92,7 +358,7 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/sample/upload-file" />
-        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.0.1" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
         <option name="gradleJvm" value="1.8" />
         <option name="modules">
           <set>
@@ -105,8 +371,22 @@
         <option name="delegatedBuild" value="true" />
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/sample/username-in-cookie" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/sample/username-in-cookie" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/sample/valid-email-gradle" />
-        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.0.1" />
+        <option name="gradleHome" value="C:/Program Files/Gradle/gradle-6.6.1" />
         <option name="gradleJvm" value="1.8" />
         <option name="modules">
           <set>

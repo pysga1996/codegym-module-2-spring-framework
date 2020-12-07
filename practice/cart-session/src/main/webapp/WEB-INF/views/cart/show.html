@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <style>
+        #increase_button, #decrease_button {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border: 1px solid black;
+            background-color: aliceblue;
+            text-align: center;
+            text-decoration: none;
+        }
+        td {
+            width: 200px;
+            height: 50px;
+            background-color: lightpink;
+            text-align: center;
+        }
+
+        th {
+            width: 200px;
+            height: 50px;
+            background-color: cornflowerblue;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<p>
+    <a th:href="@{/product/list}">Product list</a>
+</p>
+<h1 th:text="${'Items in Cart'}"></h1>
+<form action="#" th:object="${cart}" method="post">
+    <h3>Total Items: <span th:text="${cart.countItemQuantity()}"></span></h3>
+    <h3>Total Products: <span th:text="${cart.countProductQuantity()}"></span></h3>
+    <table border="1">
+        <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        <tr th:each="product: ${cart.products}">
+            <td><a th:href="@{/product/view/__${product.getKey().id}__ }" th:text="${product.getKey().name}" ></a></td>
+            <td>
+                <a id="decrease_button" th:href="@{/product/remove/__${product.getKey().id}__(action='show') }" th:text="${'-'}"></a>
+                <span th:text="${product.getValue()}" ></span>
+                <a id="increase_button" th:href="@{/product/add/__${product.getKey().id}__(action='show') }" th:text="${'+'}"></a>
+            </td>
+            <td th:text="${product.getKey().price}" ></td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td></td>
+            <td th:text="${cart.countTotalPayment()}"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

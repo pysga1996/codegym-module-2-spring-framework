@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{province.update}"></title>
+</head>
+<body>
+<span th:text="#{global.language}+${': '}"></span>
+<a th:href="@{/province/edit/__${province.id}__/(lang=en)}" th:text="#{global.english}">English</a> |
+<a th:href="@{/province/edit/__${province.id}__/(lang=vi)}" th:text="#{global.vietnamese}">Vietnamese</a>
+<h1><a th:href="@{/home/}" th:text="#{global.home}"></a></h1>
+<h1 th:text="#{province.update}"></h1>
+<p>
+    <a th:href="@{province/list}" th:text="#{province.list}"></a>
+</p>
+<th:block th:if="${message}">
+    <p th:text="#{province.update_success}"></p>
+</th:block>
+<form th:action="@{/province/edit}" th:object="${province}" method="post">
+    <label for="id"></label><input th:type="hidden" name="id" th:field="*{id}" id="id">
+    <table>
+        <tr>
+            <td><label for="name" th:text="#{province.name}"></label></td>
+            <td><input type="text" th:field="*{name}" id="name"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" th:value="#{global.update}"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

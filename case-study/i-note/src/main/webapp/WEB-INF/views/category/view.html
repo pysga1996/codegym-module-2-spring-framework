@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${category.name}"></title>
+    <style th:replace="layout :: style_for_header"></style>
+    <style th:replace="layout :: style_for_footer"></style>
+    <link th:replace="layout :: bootstrap_lib">
+    <script th:replace="layout :: jquery_lib_1"></script>
+    <script th:replace="layout :: jquery_lib_2"></script>
+    <script th:replace="layout :: jquery_lib_3"></script>
+    <style>
+        p {
+            width: 800px;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="layout :: header"></div>
+<p>
+    <a th:href="@{/category(action='list')}">Categories list</a>
+</p>
+<ol>
+    <li>
+        <h3>Description:</h3>
+        <p th:text="${category.description}"></p>
+    </li>
+    <li>
+        <h3>List of notes in this category:</h3>
+        <ul>
+            <th:block th:each="note: ${category.notes}">
+                <li><a th:text="${note.title}" th:href="@{/note/(action='view',id=${note.id})}"></a></li>
+            </th:block>
+        </ul>
+    </li>
+</ol>
+<div th:replace="layout :: footer"></div>
+</body>
+</html>

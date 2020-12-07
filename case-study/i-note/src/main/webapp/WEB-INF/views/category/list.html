@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Categories List</title>
+    <style th:replace="layout :: style_for_header"></style>
+    <style th:replace="layout :: style_for_footer"></style>
+    <link th:replace="layout :: bootstrap_lib">
+    <script th:replace="layout :: jquery_lib_1"></script>
+    <script th:replace="layout :: jquery_lib_2"></script>
+    <script th:replace="layout :: jquery_lib_3"></script>
+</head>
+<body>
+<div th:replace="layout :: header"></div>
+<h1>Categories List</h1>
+<a th:href="@{/category(action='create')}">Create new category</a>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <th:block th:each="category : ${categories}">
+        <tr>
+            <td><a th:text="${category.name}" th:href="@{/category(action='view',id=${category.id})}"></a></td>
+            <td><a th:href="@{/category(action='edit',id=${category.id})}">Edit</a></td>
+            <td><a th:href="@{/category(action='delete',id=${category.id})}">Delete</a></td>
+        </tr>
+    </th:block>
+</table>
+<div>
+    <a th:href="@{category(action='list',page=${categories.number - 1})}" th:if="${categories.hasPrevious()}">Previous</a>
+    <span th:text="${categories.number + 1}"></span>/<span th:text="${categories.totalPages}"></span>
+    <a th:href="@{category(action='list',page=${categories.number + 1})}" th:if="${categories.hasNext()}">Next</a>
+</div>
+<div th:replace="layout :: footer"></div>
+</body>
+</html>

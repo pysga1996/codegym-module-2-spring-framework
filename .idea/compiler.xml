@@ -8,8 +8,9 @@
       <module name="file-upload" target="1.8" />
       <module name="file-upload.main" target="1.8" />
       <module name="file-upload.test" target="1.8" />
-      <module name="form-and-data-binding.main" target="1.8" />
-      <module name="form-and-data-binding.test" target="1.8" />
+      <module name="save-user" target="1.8" />
+      <module name="save-user.main" target="1.8" />
+      <module name="save-user.test" target="1.8" />
       <module name="spring-email-validation" target="1.8" />
       <module name="spring-email-validation.main" target="1.8" />
       <module name="spring-email-validation.test" target="1.8" />

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{global.error}+${' 404'}"></title>
+    <style th:replace="layout :: style_for_header"></style>
+    <style th:replace="layout :: style_for_footer"></style>
+    <link th:replace="layout :: bootstrap_lib">
+    <script th:replace="layout :: jquery_lib_1"></script>
+    <script th:replace="layout :: jquery_lib_2"></script>
+    <script th:replace="layout :: jquery_lib_3"></script>
+</head>
+<body>
+<div th:replace="layout :: header"></div>
+<span th:text="#{global.error}+${' 404'}"></span>
+<div th:replace="layout :: footer"></div>
+</body>
+</html>

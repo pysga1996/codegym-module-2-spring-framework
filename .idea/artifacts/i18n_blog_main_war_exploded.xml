@@ -1,0 +1,35 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="i18n-blog.main:war exploded">
+    <output-path>$PROJECT_DIR$/sample/i18n-blog/out/artifacts</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="i18n-blog.main" />
+          <element id="file-copy" path="$PROJECT_DIR$/sample/i18n-blog/src/main/resources/message.properties" />
+          <element id="file-copy" path="$PROJECT_DIR$/sample/i18n-blog/src/main/resources/message_haw.properties" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: org.springframework:spring-webmvc:4.3.17.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-web:4.3.17.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.thymeleaf:thymeleaf-spring4:3.0.9.RELEASE" />
+          <element id="library" level="project" name="Gradle: javax.xml.bind:jaxb-api:2.3.1" />
+          <element id="library" level="project" name="Gradle: net.bytebuddy:byte-buddy:1.8.22" />
+          <element id="library" level="project" name="Gradle: net.bytebuddy:byte-buddy-agent:1.8.22" />
+          <element id="library" level="project" name="Gradle: org.thymeleaf:thymeleaf:3.0.9.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:1.7.25" />
+          <element id="library" level="project" name="Gradle: javax.activation:javax.activation-api:1.2.0" />
+          <element id="library" level="project" name="Gradle: org.attoparser:attoparser:2.0.4.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.unbescape:unbescape:1.1.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-context:4.3.17.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-beans:4.3.17.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-core:4.3.17.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-aop:4.3.17.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-expression:4.3.17.RELEASE" />
+          <element id="library" level="project" name="Gradle: commons-logging:commons-logging:1.2" />
+          <element id="library" level="project" name="Gradle: javax.servlet:javax.servlet-api:3.1.0" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="i18n-blog.main/web/Web" />
+    </root>
+  </artifact>
+</component>

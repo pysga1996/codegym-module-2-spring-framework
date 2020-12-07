@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2><a th:href="@{/home}">Home</a></h2>
+<h1>Articles List</h1>
+<a th:href="@{/user/article/create}">Create new article</a>
+<table border="1">
+    <tr>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Author</th>
+        <th>Publish Date</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <th:block th:each="article : ${articles}">
+        <tr>
+            <td><a th:text="${article.title}" th:href="@{/user/article/view/__${article.id}__ }"></a></td>
+            <td th:text="${article.category.name}"></td>
+            <td th:text="${article.author}"></td>
+            <td th:text="${#dates.format(article.publishDate,'dd-MM-yyyy')}"></td>
+            <td><a th:href="@{/user/article/edit/__${article.id}__ }">Edit</a></td>
+            <td><a th:href="@{/user/article/delete/__${article.id}__ }">Delete</a></td>
+        </tr>
+    </th:block>
+    <div>
+        <a th:href="@{'/articles'(page=${articles.number - 1})}" th:if="${articles.hasPrevious()}">Previous</a>
+        <span th:text="${articles.number + 1}"></span>/<span th:text="${articles.totalPages}"></span>
+        <a th:href="@{'/articles'(page=${articles.number + 1})}" th:if="${articles.hasNext()}">Next</a>
+    </div>
+</table>
+</body>
+</html>

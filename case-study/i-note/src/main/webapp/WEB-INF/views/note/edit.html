@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit note</title>
+    <style th:replace="layout :: style_for_header"></style>
+    <style th:replace="layout :: style_for_footer"></style>
+    <link th:replace="layout :: bootstrap_lib">
+    <script th:replace="layout :: jquery_lib_1"></script>
+    <script th:replace="layout :: jquery_lib_2"></script>
+    <script th:replace="layout :: jquery_lib_3"></script>
+</head>
+<body>
+<div th:replace="layout :: header"></div>
+<h1>Edit note</h1>
+<p>
+    <a th:href="@{/note(action='list')}">Notes list</a>
+</p>
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+<form th:action="@{/note(action='edit')}" th:object="${note}" method="post" id="edit_form" class="form-group">
+    <label for="id"></label><input th:type="hidden" name="id" th:field="*{id}" id="id">
+    <ol>
+        <li><label for="title">Title: </label><input type="text" th:field="*{title}" id="title" class="form-control"/></li>
+        <li>
+            <ul>
+                <li th:each="p : ${categories}">
+                    <label th:for="'category_'+ ${p.id}" th:text="${p.name}"></label><input th:id="'category_'+ ${p.id}" type="checkbox" th:field="*{categories}" th:value="${p.id}"></li>
+            </ul>
+        </li>
+        <li><label for="estimatedFinishedTime"></label><input class="form-control" type="number" th:field="*{estimatedFinishedTime}" id="estimatedFinishedTime" disabled/></li>
+        <li><label for="status"></label><input type="hidden" th:field="*{status}" id="status" disabled/></li>
+        <li><label for="content">Content: </label><textarea th:field="*{content}" id="content" cols="30" rows="10" form="edit_form" class="form-control"></textarea></li>
+    </ol>
+    <label for="startTime"></label><input th:if="${note.startTime!=null}" type="hidden" th:field="*{startTime}" id="startTime"/>
+    <label for="endTime"></label><input th:if="${note.endTime!=null}" type="hidden" th:field="*{endTime}" id="endTime"/>
+
+    <input type="submit" value="Update">
+</form>
+<div th:replace="layout :: footer"></div>
+</body>
+</html>

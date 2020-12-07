@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout</title>
+    <style th:fragment="style_for_header">
+        div#header {
+            background-color: cornflowerblue;
+        }
+    </style>
+    <style th:fragment="style_for_footer">
+        div#footer {
+            background-color: cornflowerblue;
+            position: fixed;
+            width: 100%;
+            height: 100px;
+            top: 700px;
+        }
+    </style>
+    <style th:fragment="style_for_body">
+        .error {
+            color: red;
+        }
+    </style>
+    <link th:fragment="bootstrap_lib" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script th:fragment="jquery_lib_1" src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script th:fragment="jquery_lib_2" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script th:fragment="jquery_lib_3" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+<center th:fragment="header">
+    <div id="header" th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder)}">
+        <a class="btn btn-success" th:href="@{/home}" th:text="#{global.home}"></a><span> | </span>
+        <a sec:authorize="isAnonymous()" th:href="@{/login}" th:text="#{global.login}" class="btn btn-primary"></a>
+        <a sec:authorize="isAuthenticated()" th:href="@{/logout}" th:text="#{global.logout}" class="btn btn-primary"></a>
+        <h2><span th:text="${#strings.capitalize('__#{global.language}__')}"></span></h2>
+        <a class="btn btn-success" th:href="@{${urlBuilder.fromCurrentRequest().replaceQueryParam('lang','en').toUriString()}}" th:text="${#strings.capitalize('__#{global.english}__')}"></a> |
+        <a class="btn btn-primary" th:href="@{${urlBuilder.fromCurrentRequest().replaceQueryParam('lang','vi').toUriString()}}" th:text="${#strings.capitalize('__#{global.vietnamese}__')}"></a>
+    </div>
+</center>
+<center th:fragment="footer">
+    <div id="footer">
+        <h2>Sout Team</h2>
+    </div>
+</center>
+</body>
+</html>

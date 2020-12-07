@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${note.title}"></title>
+    <link th:replace="layout :: bootstrap_lib">
+    <script th:replace="layout :: jquery_lib_1"></script>
+    <script th:replace="layout :: jquery_lib_2"></script>
+    <script th:replace="layout :: jquery_lib_3"></script>
+    <style>
+        canvas#myCanvas {
+            position: absolute;
+            top: 20px;
+            left: 510px;
+            z-index: 1;
+        }
+
+        img#pomodoro_fill {
+            position: absolute;
+            top: 10px;
+            left: 500px;
+            width: 500px;
+            height: 500px;
+        }
+
+        img#pomodoro_cutout {
+            position: absolute;
+            top: 10px;
+            left: 500px;
+            width: 500px;
+            height: 500px;
+            z-index: 2;
+        }
+
+        img#timeSplit {
+            top: 150px;
+            display: none;
+        }
+    </style>
+    <style th:replace="layout :: style_for_header"></style>
+    <style th:replace="layout :: style_for_footer"></style>
+    <style>
+        body {
+            background: #fbfdff;
+        }
+
+        .left {
+            float: left;
+            border: #ff5200 thin solid;
+            border-radius: 5px;
+            margin-left: 50px;
+        }
+
+        .footOfContent {
+            padding-top: 20px;
+        }
+
+        .timeRun {
+            font-size: 100px;
+        }
+        .timeFooter{
+            position: absolute;
+            top: 130px;
+            left: 1100px;
+        }
+        .timeMid{
+            position: absolute;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function loadImage() {
+            let timeSplit = document.getElementById("timeSplit");
+            let canvas = document.getElementById("myCanvas");
+            let ctx = canvas.getContext("2d");
+            let timeOut;
+            let timeToCount;
+            let endTimeString = document.getElementById("endTime").innerText;
+            let url = window.location.href;
+            let clockTick = document.getElementById("clock_tick");
+            let alarm = document.getElementById("alarm");
+            clockTick.muted = false;
+            alarm.muted = false;
+            function msToTime(duration) {
+                let seconds = Math.floor((duration / 1000) % 60),
+                    minutes = Math.floor((duration / (1000 * 60)) % 60),
+                    hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+
+                hours = (hours < 10) ? "0" + hours : hours;
+                minutes = (minutes < 10) ? "0" + minutes : minutes;
+                seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+                return [hours, minutes, seconds];
+            }
+
+            function Pomodoro() {
+                this.endTime = (endTimeString !== "") ? new Date(endTimeString) : new Date();
+                this.start = function () {
+                    timeOut = setInterval(function (self) {
+                        timeToCount = self.endTime.getTime() - new Date().getTime();
+                        if (timeToCount < 0) {
+                            clearInterval(timeOut);
+                            alarm.play();
+                            let standby = setTimeout(function () {
+                                location.reload(true);
+                                clearTimeout(standby);
+                            },3000);
+                            return false;
+                        } else {
+                            clockTick.play();
+                            document.getElementById("hour").innerText = msToTime(timeToCount)[0];
+                            document.getElementById("minute").innerText = msToTime(timeToCount)[1];
+                            document.getElementById("second").innerText = msToTime(timeToCount)[2];
+                            ctx.clearRect(0,0,1000,1000);
+                            ctx.drawImage(timeSplit, 236 - 12.5/60 * timeToCount / 1000,200);
+                        }
+
+                    }, 1000, this);
+                }
+            }
+
+
+            let pomodoro1 = new Pomodoro();
+            let mute_button = document.getElementById("mute_button");
+            let hasSound = true;
+            mute_button.onclick = function () {
+                if (hasSound === true){
+                    clockTick.muted = true;
+                    hasSound = false;
+                } else {
+                    clockTick.muted = false;
+                    hasSound = true;
+                }
+            };
+            if (document.getElementById("status").innerText === "Running") {
+                pomodoro1.start();
+            } else {
+                ctx.drawImage(timeSplit, 236,200);
+            }
+        };
+    </script>
+</head>
+<body>
+<div class="audio">
+    <audio muted preload="auto" id="clock_tick">
+        <source th:src="@{/audio/clock_tick.mp3}" type="audio/mp3">
+    </audio>
+    <audio muted preload="auto" id="alarm">
+        <source th:src="@{/audio/alarm.mp3}" type="audio/mp3">
+    </audio>
+</div>
+<div th:replace="layout :: header"></div>
+<div class="col-md-3 left ">
+    <p>
+        <a th:href="@{/note(action='list')}">Notes list</a>
+    </p>
+    <table class="table">
+        <tr>
+            <td><h2 th:text="${'Title:'}"></h2></td>
+            <td><span th:text="${note.title}"></span></td>
+        </tr>
+        <tr>
+            <td><h3 th:text="${'Category:'}"></h3></td>
+            <td>
+                <ul>
+                    <li th:each="category: ${note.categories}"><a th:href="@{/category(action='view',id=${category.id})}"  th:text="${category.name}"></a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><h3>Content: </h3></td>
+            <td><span th:utext="${note.content}"></span></td>
+        </tr>
+    </table>
+</div>
+<div class="col-md-9">
+    <div class="footOfContent">
+        <canvas id="myCanvas" width="500" height="500"></canvas>
+        <img th:src="@{/image/tomato_cutout.png}" alt="none" id="pomodoro_cutout">
+        <img th:src="@{/image/tomato_fill.png}" alt="none" id="pomodoro_fill">
+        <img th:src="@{/image/timeSplit.png}" alt="none" id="timeSplit">
+    </div>
+</div>
+<div class="timeFooter">
+    <h3 th:text="#{global.estimatedTime}"></h3>
+    <span th:text="${note.estimatedFinishedTime}"></span>
+    <h3 th:text="#{global.status}"></h3>
+    <span th:text="${note.status}" id="status"></span>
+    <a class="btn btn-danger" th:href="@{/note(action='start',id=${note.id})}" th:text="#{global.start}"></a>
+    <button id="mute_button">Mute</button>
+    <p class="timeRun"><span id="hour">__</span>:<span id="minute">__</span>:<span id="second">__</span></p>
+</div>
+<div class="timeMid">
+    <span th:if="${note.startTime!=null}" th:text="${note.startTime}" id="startTime"></span>
+    <span th:if="${note.endTime!=null}" th:text="${note.endTime}" id="endTime"></span>
+</div>
+<div th:replace="layout :: footer"></div>
+</body>
+</html>

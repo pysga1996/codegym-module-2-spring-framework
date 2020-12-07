@@ -23,6 +23,7 @@ public class AppConfiguration implements ApplicationContextAware {
         templateResolver.setPrefix("/WEB-INF/views/");
         templateResolver.setSuffix(".html");
         templateResolver.setTemplateMode(TemplateMode.HTML);
+        templateResolver.setCacheable(false);
         return templateResolver;
     }
 
@@ -37,6 +38,7 @@ public class AppConfiguration implements ApplicationContextAware {
     public ViewResolver viewResolver(){
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
         viewResolver.setTemplateEngine(templateEngine());
+        viewResolver.setCache(false);
         return viewResolver;
     }
     private ApplicationContext applicationContext;

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete category</title>
+    <style th:replace="layout :: style_for_header"></style>
+    <style th:replace="layout :: style_for_footer"></style>
+    <link th:replace="layout :: bootstrap_lib">
+    <script th:replace="layout :: jquery_lib_1"></script>
+    <script th:replace="layout :: jquery_lib_2"></script>
+    <script th:replace="layout :: jquery_lib_3"></script>
+</head>
+<body>
+<div th:replace="layout :: header"></div>
+<h1>Delete category</h1>
+<h2>Are you sure?</h2>
+<p>
+    <a th:href="@{/category(action='list')}">Categories list</a>
+</p>
+<form th:action="@{/category(action='delete')}" th:object="${category}" method="post">
+    <label for="id"></label><input th:type="hidden" name="id" th:field="*{id}" id="id">
+    <ul>
+        <li><label for="name">Name: </label><input type="text" th:field="*{name}" id="name"/></li>
+        <li><label for="description">Description: </label><input type="text" th:field="*{description}" id="description"/></li>
+    </ul>
+    <input type="submit" value="Delete">
+</form>
+<div th:replace="layout :: footer"></div>
+</body>
+</html>

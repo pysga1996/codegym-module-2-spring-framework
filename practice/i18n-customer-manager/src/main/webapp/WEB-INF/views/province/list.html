@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{global.province}"></title>
+</head>
+<body>
+<span th:text="#{global.language}+${': '}"></span>
+<a th:href="@{/province/list/(lang=en)}" th:text="#{global.english}">English</a> |
+<a th:href="@{/province/list/(lang=vi)}" th:text="#{global.vietnamese}">Vietnamese</a>
+<h1><a th:href="@{/home/}" th:text="#{global.home}"></a></h1>
+<a th:href="@{/province/create}" th:text="#{province.add}"></a>
+<h1 th:text="#{global.province}"></h1>
+<th:block th:if="${message}">
+    <p th:text="#{province.delete_success}"></p>
+</th:block>
+<table border="1">
+    <tr>
+        <th th:text="#{province.name}"></th>
+        <th th:text="#{global.edit}"></th>
+        <th th:text="#{global.delete}"></th>
+    </tr>
+    <th:block th:each="province : ${provinces}">
+        <tr>
+            <td th:text="${province.name}"></td>
+            <td><a th:href="@{/province/edit/__${province.id}__ }" th:text="#{global.edit}"></a></td>
+            <td><a th:href="@{/province/delete/__${province.id}__ }" th:text="#{global.delete}"></a></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>

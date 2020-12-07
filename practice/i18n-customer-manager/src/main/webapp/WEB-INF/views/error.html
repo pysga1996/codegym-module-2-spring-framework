@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{global.error404}"></title>
+</head>
+<body>
+<h1><a th:href="@{/home/}" th:text="#{global.home}"></a></h1>
+<span th:text="#{global.error404}"></span>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{province.add}"></title>
+</head>
+<body>
+<span th:text="#{global.language}+${': '}"></span>
+<a th:href="@{/province/create/(lang=en)}" th:text="#{global.english}">English</a> |
+<a th:href="@{/province/create/(lang=vi)}" th:text="#{global.vietnamese}">Vietnamese</a>
+<h1><a th:href="@{/home/}" th:text="#{global.home}"></a></h1>
+<h1 th:text="#{province.add}"></h1>
+<p>
+    <a th:href="@{/province/list}" th:text="#{province.list}"></a>
+</p>
+<th:block th:if="${message}">
+    <p th:text="#{province.add_success}"></p>
+</th:block>
+<form th:action="@{/province/create}" th:object="${province}" method="post">
+    <table>
+        <tr>
+            <td><label for="name" th:text="#{province.name}+${': '}"></label></td>
+            <td><input type="text" th:field="*{name}" id="name"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" th:value="#{global.add}"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
