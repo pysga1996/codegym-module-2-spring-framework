@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/create-article}">Create new article</a>
+<h1>Articles</h1>
+<table style="border: 1px solid black">
+    <tr>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Title</th>
+        <th>Publish Date</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <th:block th:each="article : ${articles}">
+        <tr>
+            <td><a th:text="${article.title}" th:href="@{/read-article/__${article.id}__ }"></a></td>
+            <td th:text="${article.category}"></td>
+            <td th:text="${article.author}"></td>
+            <td th:text="${#dates.format(article.publishDate,'dd-MM-yyyy')}"></td>
+            <td><a th:href="@{/edit-article/__${article.id}__ }">Edit</a></td>
+            <td><a th:href="@{/delete-article/__${article.id}__ }">Delete</a></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>

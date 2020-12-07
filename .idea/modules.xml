@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/practice/currency-converter/currency-converter.iml" filepath="$PROJECT_DIR$/practice/currency-converter/currency-converter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample/login-app/login-app.iml" filepath="$PROJECT_DIR$/sample/login-app/login-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/practice/personal-calculator/personal-calculator.iml" filepath="$PROJECT_DIR$/practice/personal-calculator/personal-calculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/practice/sandwitch-spice/sandwitch-spice.iml" filepath="$PROJECT_DIR$/practice/sandwitch-spice/sandwitch-spice.iml" />
       <module fileurl="file://$PROJECT_DIR$/practice/simple-dictionary/simple-dictionary.iml" filepath="$PROJECT_DIR$/practice/simple-dictionary/simple-dictionary.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample/spring-greeting/spring-greeting.iml" filepath="$PROJECT_DIR$/sample/spring-greeting/spring-greeting.iml" />
     </modules>

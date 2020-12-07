@@ -19,7 +19,7 @@
 <body>
 <fieldset>
     <legend><h2>Simple Dictionary</h2></legend>
-    <form action="<%= application.getContextPath() %>/search" method="post">
+    <form action="${pageContext.request.contextPath}/search" method="post">
         <label for="word"></label><input type="text" id="word" name="word" value="${word}"><br>
         <span>Meaning: </span><span>${meaning}</span><br>
         <input type="submit" value="Search">

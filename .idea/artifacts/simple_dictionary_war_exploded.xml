@@ -7,7 +7,14 @@
           <element id="module-output" name="simple-dictionary" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="spring-fw-lib" />
+          <element id="library" level="project" name="Gradle: commons-logging:commons-logging:1.2" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-beans:4.3.17.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-aop:4.3.17.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-context:4.3.17.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-expression:4.3.17.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-web:4.3.17.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-webmvc:4.3.17.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-core:4.3.17.RELEASE" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="simple-dictionary/web/Web" />
